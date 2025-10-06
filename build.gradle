@@ -8,11 +8,10 @@ plugins {
 }
 // Put this at the top level of build.gradle (not inside another block)
 tasks.withType(Copy).configureEach { copyTask ->
-	// Only tasks that support filePermissions
-	if(copyTask.metaClass.respondsTo(copyTask, "filePermissions")) {
-		copyTask.filePermissions {
-			set(0644)
-		}
+	// Only real Copy tasks
+	copyTask.eachFile { fileCopyDetails ->
+		// You can set file permissions per file if needed
+		fileCopyDetails.setMode(0644)
 	}
 }
 
