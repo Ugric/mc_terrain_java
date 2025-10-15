@@ -4,7 +4,7 @@ plugins {
 	id 'maven-publish'
 	id "idea"
 	id "jacoco"
-	id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+	//id 'org.jetbrains.kotlin.jvm' version '1.9.10'
 }
 // Put this at the top level of build.gradle (not inside another block)
 tasks.withType(Copy).configureEach { copyTask ->
@@ -34,11 +34,11 @@ repositories {
 }
 
 dependencies {
-	implementation('com.seedfinding:mc_math:1.171.0') { transitive = false }
-	implementation('com.seedfinding:mc_seed:1.171.1') { transitive = false }
-	implementation('com.seedfinding:mc_core:1.192.1') { transitive = false }
-	implementation('com.seedfinding:mc_noise:1.171.1') { transitive = false }
-	implementation('com.seedfinding:mc_biome:1.171.1') { transitive = false }
+	implementation('com.seedfinding:mc_math:1.171.0')
+	implementation('com.seedfinding:mc_seed:1.171.1')
+	implementation('com.seedfinding:mc_core:1.192.1')
+	implementation('com.seedfinding:mc_noise:1.171.1')
+	implementation('com.seedfinding:mc_biome:1.171.1')
 
 	testImplementation("org.junit.jupiter:junit-jupiter-api:${jupiterVersion}")
 	testImplementation("org.junit.jupiter:junit-jupiter-params:${jupiterVersion}")

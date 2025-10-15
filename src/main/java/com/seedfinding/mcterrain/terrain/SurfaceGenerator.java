@@ -537,8 +537,8 @@ public abstract class SurfaceGenerator extends TerrainGenerator {
 				Long seed = seedProvider.get(key);
 				if(seed == null) {
 					assert !cacheProvider.containsKey(key);
-					Block[] buffer = columnProvider.apply(x, z);
-					this.replaceBiomeBlocks(buffer, x, z, rand);
+					Block[] buffer = columnProvider.apply(posX, posZ);
+					this.replaceBiomeBlocks(buffer, posX, posZ, rand);
 					cacheProvider.put(key, buffer);
 					seedProvider.put(key, rand.getSeed());
 				} else {
